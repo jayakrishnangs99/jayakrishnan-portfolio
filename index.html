@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Jaya Krishnan · SOC Engineer | Network & Cybersecurity</title>
+  <title>Jaya Krishnan · SOC Engineer | Network & Cybersecurity Professional</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="SOC Engineer specializing in SIEM, Threat Hunting, and Network Defense. Splunk certified professional with hands-on SOC lab experience.">
+  <meta name="keywords" content="SOC Analyst, Security Operations Center, SIEM Engineer, Splunk, Threat Hunting, Network Security">
   <!-- professional fonts & icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* --- refined, clean, modern with SOC edge --- */
     * {
       margin: 0;
       padding: 0;
@@ -18,11 +20,63 @@
     }
 
     body {
-      background: #f6f9fe;
       font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
-      color: #0f172a;
+      color: #e2e8f0;
       line-height: 1.5;
       scroll-behavior: smooth;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Professional Background Image with Overlay */
+    body {
+      background: #0a0e27;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      opacity: 0.15;
+      z-index: -3;
+    }
+
+    /* Dark gradient overlay for better readability */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, 
+        rgba(10, 14, 39, 0.85) 0%,
+        rgba(15, 23, 42, 0.9) 50%,
+        rgba(10, 14, 39, 0.85) 100%);
+      z-index: -2;
+    }
+
+    /* Subtle grid pattern for tech feel */
+    .grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: -1;
+      pointer-events: none;
     }
 
     /* header glassmorphism */
@@ -34,11 +88,11 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.9rem 6%;
-      background: rgba(255,255,255,0.88);
+      background: rgba(10, 14, 39, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid #e2edff;
-      box-shadow: 0 4px 20px rgba(0,20,50,0.03);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
     .logo h1 {
@@ -46,7 +100,7 @@
       font-weight: 800;
       font-size: 1.65rem;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #0b2b5c, #2563eb, #1e40af);
+      background: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -58,7 +112,7 @@
     }
 
     .nav-links a {
-      color: #1e2f47;
+      color: #cbd5e1;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.98rem;
@@ -68,8 +122,8 @@
     }
 
     .nav-links a:hover {
-      color: #2563eb;
-      border-bottom-color: #2563eb;
+      color: #60a5fa;
+      border-bottom-color: #3b82f6;
     }
 
     /* hero section */
@@ -79,13 +133,30 @@
       align-items: center;
       justify-content: center;
       padding: 2rem 5%;
-      background: #f0f6fe;
-      background-image: radial-gradient(circle at 80% 20%, rgba(37,99,235,0.02) 0%, transparent 50%);
+      position: relative;
     }
 
     .hero-content {
       max-width: 1000px;
       text-align: center;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      padding: 3rem;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .avatar {
@@ -93,45 +164,44 @@
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 20px 30px -15px rgba(0,30,80,0.2);
+      border: 3px solid #3b82f6;
+      box-shadow: 0 0 20px rgba(59,130,246,0.3);
       margin-bottom: 1.5rem;
       transition: 0.25s ease;
-      background: #d9e9ff;
     }
 
     .avatar:hover {
-      transform: scale(1.02);
-      box-shadow: 0 25px 35px -18px #2563eb;
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(59,130,246,0.5);
     }
 
     .hero h2 {
       font-size: 3.2rem;
       font-weight: 800;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #0c203b;
+      color: #ffffff;
       line-height: 1.2;
       margin-bottom: 0.5rem;
     }
 
     .typing {
-      background: linear-gradient(145deg, #1e3a8a, #2563eb);
+      background: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      border-right: 3px solid #2563eb;
+      border-right: 3px solid #3b82f6;
       padding-right: 6px;
       animation: blinkCursor 0.9s infinite;
     }
 
     @keyframes blinkCursor {
-      0%,100% { border-color: #2563eb; }
+      0%,100% { border-color: #3b82f6; }
       50% { border-color: transparent; }
     }
 
     .hero-greeting {
       font-size: 1.2rem;
-      color: #2c4c6e;
+      color: #cbd5e1;
       margin: 1.2rem 0 2.2rem;
       font-weight: 450;
     }
@@ -157,27 +227,28 @@
     }
 
     .btn-primary {
-      background: #1e3a8a;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: white;
-      box-shadow: 0 8px 18px -10px #102a5e;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     }
 
     .btn-primary:hover {
-      background: #2563eb;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
       transform: translateY(-3px);
-      box-shadow: 0 16px 25px -12px #1e3a8a;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
     }
 
     .btn-outline {
-      background: transparent;
-      border-color: #2563eb;
-      color: #1e3a8a;
+      background: rgba(255,255,255,0.08);
+      border-color: #3b82f6;
+      color: #e2e8f0;
     }
 
     .btn-outline:hover {
-      background: #eef4ff;
+      background: rgba(59,130,246,0.2);
       transform: translateY(-2px);
-      border-color: #1e40af;
+      border-color: #60a5fa;
+      color: white;
     }
 
     /* sections */
@@ -196,9 +267,12 @@
       font-size: 2.4rem;
       font-weight: 700;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #0a2540;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       display: inline-block;
-      border-bottom: 3px solid #2563eb;
+      border-bottom: 3px solid #3b82f6;
       padding-bottom: 0.6rem;
     }
 
@@ -206,19 +280,19 @@
     .about-text {
       max-width: 950px;
       margin: 0 auto;
-      background: #ffffff;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
       padding: 2.8rem 3rem;
       border-radius: 36px;
-      box-shadow: 0 20px 35px -14px rgba(0,30,70,0.1);
-      border: 1px solid #eef3fc;
+      border: 1px solid rgba(59,130,246,0.25);
       font-size: 1.15rem;
-      color: #1e3349;
+      color: #e2e8f0;
       text-align: center;
       line-height: 1.75;
     }
 
     .about-text i {
-      color: #2563eb;
+      color: #3b82f6;
     }
 
     /* skills grid */
@@ -230,14 +304,14 @@
     }
 
     .skill-card {
-      background: white;
-      border: 1px solid #dee9f5;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.25);
       border-radius: 40px;
       padding: 1.6rem 0.8rem;
       text-align: center;
       font-weight: 600;
-      color: #1d334f;
-      box-shadow: 0 6px 14px -10px #c0d0e8;
+      color: #e2e8f0;
       transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
@@ -247,16 +321,17 @@
 
     .skill-card i {
       font-size: 2.2rem;
-      color: #2563eb;
+      color: #3b82f6;
     }
 
     .skill-card:hover {
       transform: translateY(-6px);
-      border-color: #2563eb;
-      box-shadow: 0 20px 25px -14px #90b4ff;
+      border-color: #3b82f6;
+      box-shadow: 0 20px 25px -14px rgba(59,130,246,0.3);
+      background: rgba(15, 23, 42, 0.85);
     }
 
-    /* projects - elegant cards */
+    /* projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -264,12 +339,12 @@
     }
 
     .project-card {
-      background: #ffffff;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
       border-radius: 32px;
       padding: 2rem 1.8rem;
-      border: 1px solid #e2ecfc;
-      box-shadow: 0 15px 30px -18px #142b44;
-      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+      border: 1px solid rgba(59,130,246,0.25);
+      transition: all 0.3s ease;
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -281,24 +356,25 @@
       top: 1.5rem;
       right: 1.5rem;
       font-size: 1.5rem;
-      color: #2563eb;
+      color: #3b82f6;
       opacity: 0;
       transition: opacity 0.2s;
     }
 
     .project-card:hover {
-      border-color: #2563eb;
+      border-color: #3b82f6;
       transform: translateY(-7px);
-      box-shadow: 0 28px 35px -18px #2563eb60;
+      box-shadow: 0 28px 35px -18px rgba(59,130,246,0.3);
+      background: rgba(15, 23, 42, 0.85);
     }
 
     .project-card:hover::after {
-      opacity: 0.6;
+      opacity: 0.8;
     }
 
     .project-icon {
       font-size: 2.5rem;
-      color: #2563eb;
+      color: #3b82f6;
       margin-bottom: 1.2rem;
     }
 
@@ -306,27 +382,27 @@
       font-size: 1.45rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
-      color: #0a1b2e;
+      color: #ffffff;
     }
 
     .project-card p {
-      color: #3c5e82;
+      color: #cbd5e1;
       font-size: 0.96rem;
       font-weight: 400;
     }
 
     .soc-badge {
       display: inline-block;
-      background: #eef2ff;
+      background: rgba(59,130,246,0.2);
       border-radius: 30px;
       padding: 0.25rem 0.8rem;
       font-size: 0.7rem;
       font-weight: 600;
-      color: #2563eb;
+      color: #60a5fa;
       margin-top: 0.8rem;
     }
 
-    /* Modal styling */
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -335,15 +411,15 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.55);
-      backdrop-filter: blur(6px);
+      background-color: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
       padding: 1rem;
     }
 
     .modal-content {
-      background: white;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
       border-radius: 38px;
       max-width: 620px;
       width: 100%;
@@ -351,7 +427,7 @@
       overflow-y: auto;
       padding: 2.5rem;
       position: relative;
-      box-shadow: 0 35px 55px -20px rgba(0,0,0,0.4);
+      border: 1px solid rgba(59,130,246,0.3);
       animation: modalSlide 0.3s ease;
     }
 
@@ -378,38 +454,38 @@
     }
 
     .close-modal:hover {
-      color: #2563eb;
+      color: #3b82f6;
     }
 
     .modal-icon {
       font-size: 3rem;
-      color: #2563eb;
+      color: #3b82f6;
       margin-bottom: 1rem;
     }
 
     .modal h3 {
       font-size: 1.9rem;
       font-weight: 800;
-      color: #0f172a;
+      color: #ffffff;
       margin-bottom: 0.8rem;
     }
 
     .modal-description {
-      color: #2c4c6e;
+      color: #cbd5e1;
       line-height: 1.7;
       margin: 1rem 0;
     }
 
     .modal-details {
-      background: #f8fafd;
+      background: rgba(30, 41, 59, 0.5);
       padding: 1.4rem;
       border-radius: 24px;
       margin: 1.5rem 0;
-      border-left: 5px solid #2563eb;
+      border-left: 5px solid #3b82f6;
     }
 
     .modal-details h4 {
-      color: #1e3a8a;
+      color: #60a5fa;
       margin-bottom: 0.9rem;
       font-size: 1.05rem;
       font-weight: 700;
@@ -424,7 +500,7 @@
       margin-bottom: 0.7rem;
       padding-left: 1.6rem;
       position: relative;
-      color: #1f3a57;
+      color: #cbd5e1;
       font-size: 0.95rem;
     }
 
@@ -432,7 +508,7 @@
       content: "▹";
       position: absolute;
       left: 0;
-      color: #2563eb;
+      color: #3b82f6;
       font-weight: bold;
     }
 
@@ -444,8 +520,8 @@
     }
 
     .tech-tag {
-      background: #eaf2ff;
-      color: #1e40af;
+      background: rgba(59,130,246,0.2);
+      color: #60a5fa;
       padding: 0.35rem 1.2rem;
       border-radius: 40px;
       font-size: 0.8rem;
@@ -453,20 +529,20 @@
     }
 
     .modal-close-btn {
-      background: #1e3a8a;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: white;
       border: none;
       padding: 0.8rem 2rem;
       border-radius: 40px;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: all 0.2s;
       width: 100%;
       margin-top: 1rem;
     }
 
     .modal-close-btn:hover {
-      background: #2563eb;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
     }
 
     /* contact */
@@ -475,13 +551,13 @@
       flex-direction: column;
       align-items: center;
       gap: 1.2rem;
-      background: #ffffff;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
       padding: 3rem 2.5rem;
       border-radius: 48px;
-      border: 1px solid #e2ecff;
+      border: 1px solid rgba(59,130,246,0.25);
       max-width: 650px;
       margin: 0 auto;
-      box-shadow: 0 18px 30px -22px #142b44;
     }
 
     .contact-item {
@@ -489,43 +565,43 @@
       align-items: center;
       gap: 1.2rem;
       font-size: 1rem;
-      background: #f0f6ff;
+      background: rgba(30, 41, 59, 0.5);
       padding: 0.9rem 2rem;
       border-radius: 60px;
       width: fit-content;
-      border: 1px solid transparent;
+      border: 1px solid rgba(59,130,246,0.25);
       transition: 0.2s;
     }
 
     .contact-item:hover {
-      background: #e4edff;
-      border-color: #2563eb;
+      background: rgba(59,130,246,0.2);
+      border-color: #3b82f6;
       transform: translateX(4px);
     }
 
     .contact-item i {
-      color: #2563eb;
+      color: #3b82f6;
       font-size: 1.4rem;
       width: 2rem;
     }
 
     .contact-item a, .contact-item span {
-      color: #1c3f60;
+      color: #e2e8f0;
       text-decoration: none;
       font-weight: 500;
     }
 
     .contact-item a:hover {
-      color: #2563eb;
+      color: #60a5fa;
       text-decoration: underline;
     }
 
     footer {
       text-align: center;
       padding: 2.5rem 5%;
-      border-top: 1px solid #d9e6f5;
-      background: #f5faff;
-      color: #49668b;
+      border-top: 1px solid rgba(59,130,246,0.2);
+      background: rgba(10, 14, 39, 0.8);
+      color: #94a3b8;
       font-size: 0.9rem;
     }
 
@@ -555,10 +631,15 @@
       .modal-content {
         padding: 1.8rem;
       }
+      .hero-content {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="grid-overlay"></div>
+
   <header>
     <div class="logo">
       <h1>JAYAKRISHNAN GS</h1>
@@ -573,12 +654,12 @@
 
   <section class="hero">
     <div class="hero-content">
-      <img src="profile.jpg" alt="Jaya Krishnan" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Jaya+Krishnan&size=160&length=2&background=1e3a8a&color=fff&bold=true&font-size=0.50&rounded=true'">
+      <img src="profile.jpg" alt="Jaya Krishnan" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Jaya+Krishnan&size=160&length=2&background=2563eb&color=fff&bold=true&font-size=0.50&rounded=true'">
       <h2>I'm a <span class="typing">SOC Engineer</span></h2>
-      <p class="hero-greeting">SIEM · Threat Hunting · Network Defense · FortiGate & Splunk</p>
+      <p class="hero-greeting">🔒 SIEM · Threat Hunting · Network Defense · FortiGate & Splunk 🔒</p>
       <div class="btn-group">
         <a href="Jaya_Krishnan_Resume.pdf" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Download CV</a>
-        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire me</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
       </div>
     </div>
   </section>
@@ -588,8 +669,8 @@
       <h2>About Me</h2>
     </div>
     <div class="about-text">
-      <i class="fas fa-shield-halved" style="color:#2563eb; opacity:0.4; font-size:1.8rem; margin-right:0.5rem;"></i>
-      SOC-oriented Network Support Assistant with strong expertise in Cisco/Juniper networking, FortiGate firewall administration, and security monitoring via FortiAnalyzer. I design security event detection workflows and recently built a complete SOC lab using Splunk + EVE-NG. Passionate about log analysis, incident response, and defending digital perimeters.
+      <i class="fas fa-shield-halved" style="color:#3b82f6; opacity:0.6; font-size:1.8rem; margin-right:0.5rem;"></i>
+      SOC-oriented Network Security Professional with strong expertise in Cisco/Juniper networking, FortiGate firewall administration, and security monitoring via FortiAnalyzer. I design security event detection workflows and recently built a complete SOC lab using Splunk + EVE-NG. Passionate about log analysis, incident response, and defending digital perimeters.
     </div>
   </section>
 
@@ -612,37 +693,43 @@
       <h2>Featured Projects</h2>
     </div>
     <div class="projects-grid">
-      <!-- NEW SOC SPLUNK + EVE-NG PROJECT -->
       <div class="project-card" onclick="openProjectModal('soc_siem')">
         <div class="project-icon"><i class="fas fa-chalkboard-user"></i></div>
         <h3>SOC Lab: Splunk + EVE-NG</h3>
-        <p>Complete Security Operations Center simulation: full network topology with Splunk indexing, event correlation, and live attack detection.</p>
+        <p>Complete Security Operations Center simulation with Splunk indexing, event correlation, and live attack detection.</p>
         <div class="soc-badge"><i class="fas fa-chart-simple"></i> SIEM · Cyber Range</div>
       </div>
 
-      <!-- original projects -->
       <div class="project-card" onclick="openProjectModal('traffic')">
         <div class="project-icon"><i class="fas fa-chart-simple"></i></div>
         <h3>Network Traffic Analysis</h3>
-        <p>Deep packet inspection, threat detection & baseline anomaly hunting.</p>
+        <p>Deep packet inspection, threat detection & baseline anomaly hunting using Wireshark.</p>
       </div>
       
       <div class="project-card" onclick="openProjectModal('firewall')">
         <div class="project-icon"><i class="fas fa-fire"></i></div>
         <h3>Firewall Hardening</h3>
-        <p>FortiGate policies, VPN tunnels, zero-trust segmentation.</p>
+        <p>FortiGate policies, VPN tunnels, and zero-trust security implementation.</p>
       </div>
       
       <div class="project-card" onclick="openProjectModal('vlan')">
         <div class="project-icon"><i class="fas fa-code-branch"></i></div>
         <h3>VLAN Segmentation</h3>
-        <p>Enterprise-grade isolation, inter-VLAN ACLs, performance boost.</p>
+        <p>Enterprise-grade network isolation with inter-VLAN ACLs for security.</p>
       </div>
       
       <div class="project-card" onclick="openProjectModal('vuln')">
         <div class="project-icon"><i class="fas fa-bug"></i></div>
         <h3>Vulnerability Scanning</h3>
-        <p>Nessus, OpenVAS, CVSS risk prioritization & remediation.</p>
+        <p>Nessus, OpenVAS, CVSS risk prioritization & remediation strategies.</p>
+      </div>
+
+      <!-- NEW PROJECT: PRINT_BLOCK ACL -->
+      <div class="project-card" onclick="openProjectModal('print_block')">
+        <div class="project-icon"><i class="fas fa-print"></i></div>
+        <h3>Printer ACL Hardening</h3>
+        <p>Extended ACL to block unauthorized printing & secure printer port access.</p>
+        <div class="soc-badge"><i class="fas fa-shield"></i> Access Control · Port Security</div>
       </div>
     </div>
   </section>
@@ -683,79 +770,93 @@
   </footer>
 
   <script>
-    // ----- EXPANDED PROJECT DATA: including Splunk + EVE-NG SOC lab -----
     const projectDetails = {
-      // BRAND NEW SOC Lab with Splunk & EVE-NG topology
       soc_siem: {
         icon: '<i class="fas fa-chalkboard-user"></i>',
         title: 'SOC Lab: Splunk + EVE-NG Integration',
         description: 'Designed and deployed a fully functional Security Operations Center (SOC) laboratory environment using EVE-NG for network topology and Splunk for centralized log monitoring, threat detection, and real-time alerting.',
         details: [
-          'Built multi-vendor network topology inside EVE-NG (Cisco routers, switches, FortiGate, Ubuntu endpoints) to generate realistic traffic and attack scenarios.',
-          'Configured Splunk Universal Forwarders on endpoints and network devices to ingest syslog, firewall logs, and NetFlow data into Splunk Indexer.',
-          'Created correlation searches and custom alerts for suspicious activities: port scans, failed authentications, ICMP tunneling and brute-force attempts.',
-          'Simulated live attacks (Nmap sweeps, Hydra SSH brute force, Metasploit) from attacker node and monitored real-time dashboards in Splunk.',
-          'Built executive SOC dashboard showing attack maps, top threat sources, and incident time-lines for faster investigation.',
-          'Documented playbooks for threat hunting and improved detection rules reducing false positives by 35% in lab environment.'
+          'Built multi-vendor network topology inside EVE-NG (Cisco routers, switches, FortiGate, Ubuntu endpoints) generating realistic traffic and attack scenarios.',
+          'Configured Splunk Universal Forwarders on endpoints and network devices to ingest syslog, firewall logs, and NetFlow data.',
+          'Created correlation searches and custom alerts for suspicious activities: port scans, failed authentications, and brute-force attempts.',
+          'Simulated live attacks (Nmap sweeps, Hydra SSH brute force, Metasploit) and monitored real-time dashboards in Splunk.',
+          'Built executive SOC dashboard showing attack maps and incident timelines for faster investigation.',
+          'Documented playbooks for threat hunting and improved detection rules reducing false positives by 35%.'
         ],
-        technologies: ['EVE-NG', 'Splunk Enterprise', 'Splunk Universal Forwarder', 'Cisco IOSv', 'FortiGate', 'Kali Linux', 'Nmap', 'Syslog', 'Custom SPL Queries'],
-        outcome: 'Successfully emulated enterprise SOC environment, reduced incident response simulation time by 50%. Gained hands-on SIEM expertise and now fully capable of deploying Splunk-based monitoring for any network.'
+        technologies: ['EVE-NG', 'Splunk Enterprise', 'Cisco IOSv', 'FortiGate', 'Kali Linux', 'Nmap', 'SPL Queries'],
+        outcome: 'Successfully emulated enterprise SOC environment, reduced incident response simulation time by 50%. Gained hands-on SIEM expertise.'
       },
       traffic: {
         icon: '<i class="fas fa-chart-simple"></i>',
         title: 'Network Traffic Analysis',
-        description: 'Comprehensive packet analysis and threat detection using Wireshark and network monitoring tools.',
+        description: 'Comprehensive packet analysis and threat detection using industry-standard tools.',
         details: [
-          'Captured and analyzed over 12,000 packets to identify suspicious network behavior patterns',
-          'Detected and isolated malicious traffic flows including port scans and DoS attempts',
-          'Created packet filtering rules to reduce noise and improve threat visibility by 60%',
-          'Documented network baseline behavior for anomaly detection',
-          'Presented findings to security team with remediation recommendations'
+          'Captured and analyzed over 12,000 packets to identify suspicious network behavior patterns.',
+          'Detected and isolated malicious traffic flows including port scans and DoS attempts.',
+          'Created packet filtering rules to reduce noise and improve threat visibility by 60%.',
+          'Documented network baseline behavior for anomaly detection.',
+          'Presented findings to security team with remediation recommendations.'
         ],
-        technologies: ['Wireshark', 'tcpdump', 'Python', 'NetworkMiner', 'TCP/IP Analysis'],
-        outcome: 'Successfully identified 3+ undetected malicious activities and improved network monitoring capabilities.'
+        technologies: ['Wireshark', 'tcpdump', 'Python', 'NetworkMiner'],
+        outcome: 'Successfully identified 3+ undetected malicious activities and improved monitoring capabilities.'
       },
       firewall: {
         icon: '<i class="fas fa-fire"></i>',
         title: 'Firewall Hardening & VPN Configuration',
-        description: 'FortiGate firewall policy optimization and secure VPN implementation.',
+        description: 'Enterprise firewall security optimization and secure remote access implementation.',
         details: [
-          'Configured and optimized FortiGate firewall policies for 200+ network segments',
-          'Implemented IPSec VPN tunnels for remote access with 256-bit encryption',
-          'Set up traffic shaping rules to prioritize critical business applications',
-          'Created firewall rule audit and cleanup process, removing 35 redundant rules',
-          'Configured logging and alerts for security events via FortiAnalyzer'
+          'Configured and optimized FortiGate firewall policies for 200+ network segments.',
+          'Implemented IPSec VPN tunnels for remote access with 256-bit encryption.',
+          'Set up traffic shaping rules to prioritize critical business applications.',
+          'Created firewall rule audit process, removing 35 redundant rules.',
+          'Configured logging and alerts for security events via FortiAnalyzer.'
         ],
-        technologies: ['FortiGate', 'IPSec VPN', 'FortiAnalyzer', 'SSL VPN', 'Traffic Shaping'],
-        outcome: 'Enhanced security posture with zero VPN security incidents over 6 months and 40% better firewall performance.'
+        technologies: ['FortiGate', 'IPSec VPN', 'FortiAnalyzer', 'SSL VPN'],
+        outcome: 'Zero VPN security incidents over 6 months and 40% better firewall performance.'
       },
       vlan: {
         icon: '<i class="fas fa-code-branch"></i>',
         title: 'VLAN Segmentation & Network Optimization',
         description: 'Designed and deployed VLAN architecture for departmental isolation and performance.',
         details: [
-          'Designed VLAN structure separating Finance, HR, Engineering, and Guest networks',
-          'Configured trunk ports and VTP across 15 Cisco switches',
-          'Implemented inter-VLAN routing with access control lists (ACLs)',
-          'Reduced broadcast domain size by 75%, decreasing network congestion',
-          'Set up 802.1Q trunking and STP for redundancy and loop prevention'
+          'Designed VLAN structure separating Finance, HR, Engineering, and Guest networks.',
+          'Configured trunk ports and VTP across 15 Cisco switches.',
+          'Implemented inter-VLAN routing with access control lists (ACLs).',
+          'Reduced broadcast domain size by 75%, decreasing network congestion.',
+          'Set up 802.1Q trunking and STP for redundancy and loop prevention.'
         ],
-        technologies: ['Cisco IOS', 'VTP', 'STP', '802.1Q', 'ACLs', 'Inter-VLAN Routing'],
+        technologies: ['Cisco IOS', 'VTP', 'STP', '802.1Q', 'ACLs'],
         outcome: 'Network performance improved by 45% with enhanced security between departments.'
       },
       vuln: {
         icon: '<i class="fas fa-bug"></i>',
-        title: 'Vulnerability Assessment & Scanning',
-        description: 'Regular security scanning and vulnerability identification using industry tools.',
+        title: 'Vulnerability Assessment Program',
+        description: 'Enterprise vulnerability management program implementation.',
         details: [
-          'Performed weekly Nessus scans across 50+ network devices and servers',
-          'Identified and prioritized vulnerabilities based on CVSS scores',
-          'Discovered 25+ critical vulnerabilities including outdated services and misconfigurations',
-          'Worked with IT team to patch and remediate identified issues',
-          'Created vulnerability tracking spreadsheet and monthly reports for management'
+          'Performed weekly Nessus scans across 50+ network devices and servers.',
+          'Identified and prioritized vulnerabilities based on CVSS scores.',
+          'Discovered 25+ critical vulnerabilities including outdated services.',
+          'Worked with IT team to patch and remediate identified issues.',
+          'Created vulnerability tracking and monthly reports for management.'
         ],
-        technologies: ['Nessus', 'Nmap', 'OpenVAS', 'CVE Database', 'CVSS Scoring'],
-        outcome: 'Reduced critical vulnerabilities by 80% within 3 months and established regular scanning cadence.'
+        technologies: ['Nessus', 'Nmap', 'OpenVAS', 'CVE Database'],
+        outcome: 'Reduced critical vulnerabilities by 80% within 3 months.'
+      },
+      // NEW PRINT_BLOCK PROJECT
+      print_block: {
+        icon: '<i class="fas fa-print"></i>',
+        title: 'Printer ACL Hardening & Port Security',
+        description: 'Implemented granular access control to secure network printers and prevent unauthorized printing from untrusted hosts.',
+        details: [
+          'Created extended ACL "PRINT_BLOCK" to permit printing only from authorized host (192.168.1.90) to printer (192.168.0.95) on port 9100.',
+          'Configured deny rule to block all other hosts from accessing printer port 9100, mitigating internal threats.',
+          'Applied ACL inbound on printer-connected interface Gi1/0/2 to enforce policy at the network edge.',
+          'Set up access port Gi1/0/1 in VLAN 6 with switchport mode access and spanning-tree portfast for optimal performance.',
+          'Verified ACL counters and logging to monitor unauthorized access attempts.',
+          'Documented configuration steps and security benefits for compliance.'
+        ],
+        technologies: ['Cisco IOS', 'Extended ACLs', 'Port Security', 'VLAN 6', 'STP Portfast'],
+        outcome: 'Successfully restricted printing access to authorized hosts only, reducing risk of data leakage and unauthorized print jobs.'
       }
     };
 
@@ -787,7 +888,7 @@
         detailsHTML += `</div>`;
         
         detailsHTML += `
-          <div style="background: #eaf4ff; padding: 1rem; border-radius: 20px; margin: 1rem 0;">
+          <div style="background: rgba(59,130,246,0.1); padding: 1rem; border-radius: 20px; margin: 1rem 0;">
             <strong>📊 Outcome / Impact:</strong> ${project.outcome}
           </div>
           <button class="modal-close-btn" onclick="closeProjectModal()">Close</button>
@@ -813,8 +914,7 @@
       if (event.key === 'Escape') closeProjectModal();
     });
 
-    // Typing effect - SOC related rotation
-    const roles = ["SOC Engineer", "Cybersecurity Analyst", "SIEM Specialist", "Network Defender"];
+    const roles = ["SOC Engineer", "Cybersecurity Analyst", "SIEM Specialist", "Network Defender", "Threat Hunter"];
     let idx = 0, charIdx = 0, deleting = false;
     const el = document.querySelector(".typing");
 
@@ -843,7 +943,6 @@
     }
     typeWriter();
 
-    // smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
