@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jaya Krishnan GS · SOC Engineer | Portfolio</title>
-  <meta name="description" content="SOC Engineer specializing in SIEM, Threat Hunting, and Network Defense. Splunk certified professional." />
+  <meta name="description" content="SOC Engineer specializing in SIEM, Threat Hunting, and Network Defense." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* ───────── RESET & BASE ───────── */
     * {
       margin: 0;
       padding: 0;
@@ -25,7 +24,6 @@
       min-height: 100vh;
     }
 
-    /* ───────── BACKGROUND ───────── */
     body::before {
       content: "";
       position: fixed;
@@ -65,7 +63,6 @@
       pointer-events: none;
     }
 
-    /* ───────── HEADER ───────── */
     header {
       position: sticky;
       top: 0;
@@ -111,7 +108,6 @@
       border-bottom-color: #3b82f6;
     }
 
-    /* ───────── HERO ───────── */
     .hero {
       min-height: 80vh;
       display: flex;
@@ -238,7 +234,6 @@
       color: #fff;
     }
 
-    /* ───────── SECTIONS ───────── */
     .section {
       padding: 5rem 6% 4rem;
       max-width: 1300px;
@@ -263,7 +258,6 @@
       padding-bottom: 0.5rem;
     }
 
-    /* ───────── ABOUT ───────── */
     .about-text {
       max-width: 950px;
       margin: 0 auto;
@@ -283,7 +277,6 @@
       margin-right: 0.3rem;
     }
 
-    /* ───────── SKILLS ───────── */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -319,7 +312,6 @@
       background: rgba(15, 23, 42, 0.85);
     }
 
-    /* ───────── PROJECTS ───────── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -426,7 +418,6 @@
       letter-spacing: 0.3px;
     }
 
-    /* ───────── MODAL ───────── */
     .modal {
       display: none;
       position: fixed;
@@ -606,7 +597,6 @@
       background: linear-gradient(135deg, #3b82f6, #2563eb);
     }
 
-    /* ───────── CONTACT ───────── */
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -656,7 +646,6 @@
       color: #60a5fa;
     }
 
-    /* ───────── FOOTER ───────── */
     footer {
       text-align: center;
       padding: 2.5rem 5%;
@@ -666,7 +655,6 @@
       font-size: 0.9rem;
     }
 
-    /* ───────── RESPONSIVE ───────── */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -709,7 +697,6 @@
 <body>
   <div class="grid-overlay"></div>
 
-  <!-- ─── HEADER ─── -->
   <header>
     <div class="logo">
       <h1>JAYAKRISHNAN GS</h1>
@@ -722,20 +709,18 @@
     </nav>
   </header>
 
-  <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="hero-content">
-      <img src="profile.jpg" alt="Jaya Krishnan GS" class="avatar" />
+      <img src="profile.jpg" alt="Jaya Krishnan GS" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Jaya+Krishnan+GS&size=140&background=2563eb&color=fff&bold=true'" />
       <h2>I'm a <span class="typing">SOC Engineer</span></h2>
       <p class="hero-greeting">🔒 SIEM · Threat Hunting · Incident Response · FortiGate &amp; Splunk</p>
       <div class="btn-group">
-        <a href="Jaya_Krishnan_Resume.pdf" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Download CV</a>
+        <a href="Jaya_Krishnan_Resume.pdf" class="btn btn-primary" target="_blank"><i class="fas fa-file-pdf"></i> Download CV</a>
         <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
       </div>
     </div>
   </section>
 
-  <!-- ─── ABOUT ─── -->
   <section id="about" class="section">
     <div class="section-header">
       <h2>About Me</h2>
@@ -746,7 +731,6 @@
     </div>
   </section>
 
-  <!-- ─── SKILLS ─── -->
   <section id="skills" class="section">
     <div class="section-header">
       <h2>Technical Arsenal</h2>
@@ -763,14 +747,12 @@
     </div>
   </section>
 
-  <!-- ─── PROJECTS ─── -->
   <section id="projects" class="section">
     <div class="section-header">
       <h2>Featured Projects</h2>
     </div>
     <div class="projects-grid">
 
-      <!-- PROJECT 1: Crypto Mining Malware Investigation -->
       <div class="project-card" onclick="openProjectModal('crypto_mining')">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop&crop=center" alt="Crypto Mining Malware Investigation" />
@@ -791,7 +773,6 @@
         </div>
       </div>
 
-      <!-- PROJECT 2: SOC Lab -->
       <div class="project-card" onclick="openProjectModal('soc_siem')">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center" alt="SOC Lab Splunk Dashboard" />
@@ -812,7 +793,6 @@
         </div>
       </div>
 
-      <!-- PROJECT 3: Firewall Hardening -->
       <div class="project-card" onclick="openProjectModal('firewall')">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop&crop=center" alt="Firewall Hardening" />
@@ -832,7 +812,6 @@
         </div>
       </div>
 
-      <!-- PROJECT 4: VLAN Segmentation -->
       <div class="project-card" onclick="openProjectModal('vlan')">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" alt="VLAN Segmentation" />
@@ -853,7 +832,6 @@
         </div>
       </div>
 
-      <!-- PROJECT 5: Vulnerability Scanning -->
       <div class="project-card" onclick="openProjectModal('vuln')">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center" alt="Vulnerability Scanning" />
@@ -874,7 +852,6 @@
         </div>
       </div>
 
-      <!-- PROJECT 6: Printer ACL Hardening -->
       <div class="project-card" onclick="openProjectModal('print_block')">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center" alt="Printer ACL Hardening" />
@@ -897,7 +874,6 @@
     </div>
   </section>
 
-  <!-- ─── MODAL ─── -->
   <div id="projectModal" class="modal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeProjectModal()">&times;</button>
@@ -905,7 +881,6 @@
     </div>
   </div>
 
-  <!-- ─── CONTACT ─── -->
   <section id="contact" class="section">
     <div class="section-header">
       <h2>Get in Touch</h2>
@@ -926,7 +901,6 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
   <footer>
     <p>© 2026 Jaya Krishnan GS — SOC Engineer · Cybersecurity Professional</p>
     <p style="margin-top:0.6rem; font-size:0.8rem; opacity:0.5;">
@@ -935,10 +909,7 @@
   </footer>
 
   <script>
-    // ─── PROJECT DATA ──────────────────────────────────────────────────────
-
     const projectDetails = {
-      // NEW: Crypto Mining Malware Investigation
       crypto_mining: {
         img: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop&crop=center',
         title: '🪙 Cryptocurrency Mining Malware Investigation',
@@ -954,7 +925,6 @@
         technologies: ['FortiGate', 'Bitdefender', 'VirusTotal', 'Splunk', 'MITRE ATT&CK', 'XMRig'],
         outcome: 'Successfully contained and eradicated the cryptocurrency miner. Identified persistence mechanism via python.exe requiring additional investigation. Documented complete incident response playbook.'
       },
-
       soc_siem: {
         img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center',
         title: '🔬 SOC Lab: Splunk + EVE-NG Integration',
@@ -969,7 +939,6 @@
         technologies: ['Splunk Enterprise', 'EVE-NG', 'Cisco IOSv', 'FortiGate', 'Kali Linux', 'Nmap', 'SPL'],
         outcome: 'Successfully emulated enterprise SOC environment, reducing incident response simulation time by 50%.'
       },
-
       firewall: {
         img: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=400&fit=crop&crop=center',
         title: '🔥 Firewall Hardening & VPN Configuration',
@@ -984,7 +953,6 @@
         technologies: ['FortiGate', 'IPSec VPN', 'FortiAnalyzer', 'SSL VPN'],
         outcome: 'Zero VPN security incidents over 6 months and 40% better firewall performance.'
       },
-
       vlan: {
         img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&crop=center',
         title: '📡 VLAN Segmentation & Network Optimization',
@@ -999,7 +967,6 @@
         technologies: ['Cisco IOS', 'VTP', 'STP', '802.1Q', 'ACLs'],
         outcome: 'Network performance improved by 45% with enhanced security between departments.'
       },
-
       vuln: {
         img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&crop=center',
         title: '🐛 Vulnerability Assessment Program',
@@ -1014,7 +981,6 @@
         technologies: ['Nessus', 'Nmap', 'OpenVAS', 'CVE Database'],
         outcome: 'Reduced critical vulnerabilities by 80% within 3 months.'
       },
-
       print_block: {
         img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop&crop=center',
         title: '🖨️ Printer ACL Hardening & Port Security',
@@ -1030,8 +996,6 @@
         outcome: 'Successfully restricted printing access to authorized hosts only, reducing risk of data leakage.'
       }
     };
-
-    // ─── MODAL FUNCTIONS ──────────────────────────────────────────────────
 
     function openProjectModal(projectId) {
       const modal = document.getElementById('projectModal');
@@ -1082,18 +1046,14 @@
       document.body.style.overflow = 'auto';
     }
 
-    // Close modal on backdrop click
     window.onclick = function(event) {
       const modal = document.getElementById('projectModal');
       if (event.target === modal) closeProjectModal();
     };
 
-    // Close modal on Escape key
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') closeProjectModal();
     });
-
-    // ─── TYPING ANIMATION ──────────────────────────────────────────────────
 
     const roles = ['SOC Engineer', 'Cybersecurity Analyst', 'SIEM Specialist', 'Incident Responder', 'Threat Hunter'];
     let idx = 0,
@@ -1125,8 +1085,6 @@
       setTimeout(typeWriter, speed);
     }
     typeWriter();
-
-    // ─── SMOOTH SCROLL ────────────────────────────────────────────────────
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
