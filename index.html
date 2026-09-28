@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jaya Krishnan GS · SOC Engineer</title>
+  <title>JAYAKRISHNAN GS · SOC Engineer</title>
   <meta name="description" content="SOC Engineer specializing in SIEM, Threat Hunting, and Network Defense." />
   
   <!-- Fonts -->
@@ -82,18 +82,10 @@
     }
 
     @keyframes orbFloat {
-      0% {
-        transform: translate(0, 0) scale(1);
-      }
-      33% {
-        transform: translate(30px, -30px) scale(1.1);
-      }
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
-      }
-      100% {
-        transform: translate(10px, -10px) scale(1.05);
-      }
+      0% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(10px, -10px) scale(1.05); }
     }
 
     .bg-container .grid {
@@ -401,7 +393,7 @@
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
 
-    /* ─── PROFILE PHOTO ─── */
+    /* ─── MOVING PROFILE PHOTO ─── */
     .hero-right {
       display: flex;
       justify-content: center;
@@ -415,13 +407,15 @@
       height: 400px;
     }
 
+    /* Outer rotating ring */
     .profile-ring {
       position: absolute;
-      inset: -8px;
+      inset: -12px;
       border-radius: 50%;
       background: conic-gradient(from 0deg, #2563eb, #60a5fa, #2563eb, #60a5fa, #2563eb);
-      animation: spin 8s linear infinite;
-      opacity: 0.5;
+      animation: spin 6s linear infinite;
+      opacity: 0.6;
+      filter: blur(1px);
     }
 
     @keyframes spin {
@@ -431,17 +425,33 @@
     .profile-ring::after {
       content: "";
       position: absolute;
-      inset: 4px;
+      inset: 6px;
       border-radius: 50%;
       background: #070b14;
     }
 
+    /* Inner counter-rotating ring */
     .profile-ring-inner {
       position: absolute;
-      inset: -8px;
+      inset: -20px;
       border-radius: 50%;
-      background: conic-gradient(from 0deg, rgba(37, 99, 235, 0.2), rgba(96, 165, 250, 0.1), rgba(37, 99, 235, 0.2));
-      animation: spin 8s linear infinite reverse;
+      background: conic-gradient(from 180deg, rgba(37, 99, 235, 0.3), rgba(96, 165, 250, 0.2), rgba(37, 99, 235, 0.3));
+      animation: spin 10s linear infinite reverse;
+      filter: blur(2px);
+    }
+
+    /* Glowing pulse effect */
+    .profile-glow {
+      position: absolute;
+      inset: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+      animation: glowPulse 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { opacity: 0.4; transform: scale(1); }
+      100% { opacity: 0.8; transform: scale(1.05); }
     }
 
     .profile-photo {
@@ -451,15 +461,16 @@
       object-fit: cover;
       position: relative;
       z-index: 2;
-      border: 3px solid rgba(59, 130, 246, 0.2);
-      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 3px solid rgba(59, 130, 246, 0.3);
+      transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       background: #0b1120;
+      box-shadow: 0 0 50px rgba(37, 99, 235, 0.15);
     }
 
     .profile-photo:hover {
-      transform: scale(1.02);
-      border-color: rgba(59, 130, 246, 0.5);
-      box-shadow: 0 0 60px rgba(37, 99, 235, 0.15);
+      transform: scale(1.03);
+      border-color: rgba(59, 130, 246, 0.7);
+      box-shadow: 0 0 80px rgba(37, 99, 235, 0.3);
     }
 
     .status-badge {
@@ -500,15 +511,16 @@
       align-items: center;
       gap: 0.8rem;
       animation: float 6s ease-in-out infinite;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     }
 
-    .floating-badge:nth-child(3) {
+    .floating-badge:nth-child(4) {
       top: 10%;
       right: -10%;
       animation-delay: 0s;
     }
 
-    .floating-badge:nth-child(4) {
+    .floating-badge:nth-child(5) {
       bottom: 20%;
       left: -12%;
       animation-delay: -3s;
@@ -733,19 +745,10 @@
       border: 1px solid rgba(255, 255, 255, 0.04);
       border-radius: 24px;
       overflow: hidden;
-      cursor: pointer;
       transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(7, 11, 20, 0.9));
-      z-index: 1;
-      opacity: 0;
-      transition: 0.4s;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
@@ -754,15 +757,14 @@
       box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.5);
     }
 
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
     .project-img-wrapper {
       position: relative;
-      height: 210px;
+      height: 180px;
       overflow: hidden;
       background: #0b1120;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .project-img-wrapper img {
@@ -776,63 +778,27 @@
       transform: scale(1.06);
     }
 
-    .project-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(7, 11, 20, 0.6);
-      backdrop-filter: blur(6px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: 0.4s;
-      gap: 0.3rem;
-      z-index: 2;
-    }
-
-    .project-card:hover .project-overlay {
-      opacity: 1;
-    }
-
-    .project-overlay i {
-      font-size: 2.4rem;
-      color: #60a5fa;
-      transform: scale(0.8);
-      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .project-card:hover .project-overlay i {
-      transform: scale(1);
-    }
-
-    .project-overlay span {
-      color: #fff;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: 0.4s 0.1s;
-    }
-
-    .project-card:hover .project-overlay span {
-      opacity: 1;
-      transform: translateY(0);
+    .project-img-wrapper .project-icon {
+      font-size: 4rem;
+      color: #3b82f6;
+      opacity: 0.6;
     }
 
     .project-info {
       padding: 1.6rem 1.8rem 1.8rem;
       position: relative;
       z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-info h3 {
       font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 600;
       color: #ffffff;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
     }
 
     .project-info p {
@@ -840,12 +806,14 @@
       font-size: 0.9rem;
       line-height: 1.6;
       margin-bottom: 0.8rem;
+      flex: 1;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .project-tags span {
@@ -857,6 +825,38 @@
       font-weight: 600;
       letter-spacing: 0.3px;
       border: 1px solid rgba(59, 130, 246, 0.04);
+    }
+
+    .project-buttons {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .project-buttons .btn-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      background: rgba(59, 130, 246, 0.06);
+      color: #60a5fa;
+      cursor: pointer;
+    }
+
+    .project-buttons .btn-sm:hover {
+      background: rgba(59, 130, 246, 0.15);
+      transform: translateY(-2px);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .project-buttons .btn-sm i {
+      font-size: 0.75rem;
     }
 
     /* ───────── MODAL ───────── */
@@ -921,11 +921,12 @@
 
     .modal-img {
       width: 100%;
-      max-height: 280px;
+      max-height: 240px;
       object-fit: cover;
       border-radius: 20px;
       margin: 0.5rem 0 1.2rem;
       border: 1px solid rgba(59, 130, 246, 0.06);
+      background: #0b1120;
     }
 
     .modal h3 {
@@ -1162,17 +1163,17 @@
         height: 68px;
       }
       .logo {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       .nav-links {
         gap: 1rem;
       }
       .nav-links a {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
       }
       .nav-cta {
         padding: 0.3rem 1rem;
-        font-size: 0.7rem !important;
+        font-size: 0.65rem !important;
       }
       .hero h1 {
         font-size: 2.4rem;
@@ -1244,7 +1245,7 @@
   <header id="header">
     <div class="logo">
       <span class="dot"></span>
-      Jaya<span>Krishnan</span>
+      JAYA<span>KRISHNAN</span> GS
     </div>
     <nav class="nav-links">
       <a href="#about">About</a>
@@ -1262,7 +1263,7 @@
           <span class="pulse-dot"></span>
           Open to SOC Roles
         </div>
-        <h1>Jaya <span class="highlight">Krishnan GS</span></h1>
+        <h1>JAYA <span class="highlight">KRISHNAN GS</span></h1>
         <p class="hero-subtitle">SOC Engineer · <span>Incident Response Specialist</span></p>
         <p class="hero-description">
           Securing enterprise networks through advanced SIEM monitoring, threat hunting, 
@@ -1282,7 +1283,8 @@
         <div class="profile-container">
           <div class="profile-ring"></div>
           <div class="profile-ring-inner"></div>
-          <img src="profile.jpg" alt="Jaya Krishnan GS" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?name=Jaya+Krishnan+GS&size=400&background=1d4ed8&color=fff&bold=true&font-size=0.40'" />
+          <div class="profile-glow"></div>
+          <img src="profile.jpg" alt="JAYAKRISHNAN GS" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?name=JAYAKRISHNAN+GS&size=400&background=1d4ed8&color=fff&bold=true&font-size=0.40'" />
           <div class="status-badge">
             <span class="dot"></span>
             Available
@@ -1380,17 +1382,14 @@
     <div class="section-header">
       <div class="label">Portfolio</div>
       <h2>Featured Projects</h2>
-      <p>Click any project to explore the full investigation details</p>
+      <p>Security investigations &amp; full-stack automation projects</p>
     </div>
     <div class="projects-grid">
 
-      <div class="project-card" onclick="openProjectModal('crypto_mining')">
+      <!-- Crypto Mining -->
+      <div class="project-card">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop&crop=center" alt="Crypto Mining" />
-          <div class="project-overlay">
-            <i class="fas fa-search-plus"></i>
-            <span>View Investigation</span>
-          </div>
         </div>
         <div class="project-info">
           <h3>🪙 Crypto Mining Malware Investigation</h3>
@@ -1400,16 +1399,18 @@
             <span>Bitdefender</span>
             <span>VirusTotal</span>
           </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('crypto_mining')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" onclick="openProjectModal('soc_siem')">
+      <!-- SOC Lab -->
+      <div class="project-card">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center" alt="SOC Lab" />
-          <div class="project-overlay">
-            <i class="fas fa-search-plus"></i>
-            <span>View Project</span>
-          </div>
         </div>
         <div class="project-info">
           <h3>🔬 SOC Lab: Splunk + EVE-NG</h3>
@@ -1419,16 +1420,18 @@
             <span>EVE-NG</span>
             <span>Cisco</span>
           </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('soc_siem')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" onclick="openProjectModal('firewall')">
+      <!-- Firewall -->
+      <div class="project-card">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop&crop=center" alt="Firewall" />
-          <div class="project-overlay">
-            <i class="fas fa-search-plus"></i>
-            <span>View Project</span>
-          </div>
         </div>
         <div class="project-info">
           <h3>🔥 Firewall Hardening &amp; VPN</h3>
@@ -1438,16 +1441,18 @@
             <span>IPSec</span>
             <span>SSL VPN</span>
           </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('firewall')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" onclick="openProjectModal('vlan')">
+      <!-- VLAN -->
+      <div class="project-card">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" alt="VLAN" />
-          <div class="project-overlay">
-            <i class="fas fa-search-plus"></i>
-            <span>View Project</span>
-          </div>
         </div>
         <div class="project-info">
           <h3>📡 VLAN Segmentation</h3>
@@ -1457,16 +1462,18 @@
             <span>VTP</span>
             <span>ACLs</span>
           </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('vlan')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" onclick="openProjectModal('vuln')">
+      <!-- Vulnerability -->
+      <div class="project-card">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center" alt="Vulnerability" />
-          <div class="project-overlay">
-            <i class="fas fa-search-plus"></i>
-            <span>View Project</span>
-          </div>
         </div>
         <div class="project-info">
           <h3>🐛 Vulnerability Scanning</h3>
@@ -1476,16 +1483,18 @@
             <span>OpenVAS</span>
             <span>Nmap</span>
           </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('vuln')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" onclick="openProjectModal('print_block')">
+      <!-- Printer ACL -->
+      <div class="project-card">
         <div class="project-img-wrapper">
           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center" alt="Printer ACL" />
-          <div class="project-overlay">
-            <i class="fas fa-search-plus"></i>
-            <span>View Project</span>
-          </div>
         </div>
         <div class="project-info">
           <h3>🖨️ Printer ACL Hardening</h3>
@@ -1494,6 +1503,55 @@
             <span>Cisco ACL</span>
             <span>Port Security</span>
             <span>VLAN 6</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('print_block')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOC Complaint Management System -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <i class="fas fa-ticket-alt project-icon"></i>
+        </div>
+        <div class="project-info">
+          <h3>📋 NOC Complaint Management System</h3>
+          <p>A web-based complaint management system to streamline registration, tracking, and management of network-related complaints in a NOC environment.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>SQLite</span>
+            <span>HTML/CSS</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('noc_complaint')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee Attendance Management System -->
+      <div class="project-card">
+        <div class="project-img-wrapper">
+          <i class="fas fa-clock project-icon"></i>
+        </div>
+        <div class="project-info">
+          <h3>⏱️ Employee Attendance Management System</h3>
+          <p>A web-based system to manage employee attendance, working hours, leave records, and administrative operations with Flask and SQLite.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>SQLite</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="project-buttons">
+            <button class="btn-sm" onclick="openProjectModal('attendance_mgmt')"><i class="fas fa-eye"></i> Details</button>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn-sm" onclick="event.preventDefault();"><i class="fas fa-file-pdf"></i> Docs</a>
           </div>
         </div>
       </div>
@@ -1534,7 +1592,7 @@
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <p>© 2026 <span class="name">Jaya Krishnan GS</span> — SOC Engineer · Cybersecurity Professional</p>
+    <p>© 2026 <span class="name">JAYAKRISHNAN GS</span> — SOC Engineer · Cybersecurity Professional</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/jayakrishnan-gs-8209521a7" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:jayakrishnangs99@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -1630,6 +1688,46 @@
         ],
         technologies: ['Cisco IOS', 'Extended ACLs', 'Port Security', 'VLAN 6', 'STP Portfast'],
         outcome: 'Successfully restricted printing access to authorized hosts only, reducing risk of data leakage.'
+      },
+      noc_complaint: {
+        img: '',
+        icon: 'fas fa-ticket-alt',
+        title: '📋 NOC Complaint Management System',
+        description: 'A web-based complaint management system developed to streamline the registration, tracking, and management of network-related complaints in a Network Operations Center (NOC) environment.',
+        details: [
+          'Complaint registration and submission',
+          'Complaint status tracking',
+          'Admin dashboard and management',
+          'Centralized complaint records',
+          'Simple workflow for monitoring and resolving complaints',
+          'Designed around practical NOC operations and incident-handling workflows'
+        ],
+        technologies: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'Web-based application'],
+        role: 'Full-stack developer — designed database schema, built Flask backend, created responsive frontend, and implemented complaint tracking workflows.',
+        status: 'Completed · Deployed in local NOC environment for internal use.',
+        outcome: 'Streamlined complaint handling and improved organization of network incident records. This project demonstrates practical NOC automation and full-stack development skills.'
+      },
+      attendance_mgmt: {
+        img: '',
+        icon: 'fas fa-clock',
+        title: '⏱️ Employee Attendance Management System',
+        description: 'A web-based employee attendance management system developed using Flask and SQLite to manage employee attendance, working hours, leave records, and administrative operations.',
+        details: [
+          'Employee login and dashboard',
+          'Owner/Admin dashboard',
+          'Attendance recording',
+          'Working-hour calculation',
+          'Late arrival and late departure calculation',
+          'Leave and holiday/off-day handling',
+          'Attendance history and records',
+          'Local network deployment and testing',
+          'Wi-Fi-based attendance verification concept',
+          'SQLite database for storing attendance records'
+        ],
+        technologies: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'JavaScript', 'Linux/Windows deployment'],
+        role: 'Full-stack developer — implemented authentication, business logic for working-hour calculation, admin dashboard, and local network deployment.',
+        status: 'Completed · Deployed on local network for internal testing.',
+        outcome: 'Demonstrates practical full-stack automation, database management, business-logic implementation, authentication, and local network deployment. Example business logic: if an employee arrives late but works enough additional time to complete the required working hours, the system calculates the actual working duration rather than automatically treating the employee as absent or on leave.'
       }
     };
 
@@ -1642,37 +1740,53 @@
 
       if (!project) return;
 
-      let html = `
-        <img src="${project.img}" alt="${project.title}" class="modal-img" />
-        <h3>${project.title}</h3>
-        <div class="modal-description">${project.description}</div>
-        <div class="modal-details">
-          <h4><i class="fas fa-list-check"></i> Key Implementations</h4>
-          <ul>
-      `;
+      let html = '';
 
+      // Image or icon
+      if (project.img) {
+        html += `<img src="${project.img}" alt="${project.title}" class="modal-img" />`;
+      } else if (project.icon) {
+        html += `<div style="text-align:center;padding:2rem 0 1rem;"><i class="${project.icon}" style="font-size:4rem;color:#3b82f6;opacity:0.7;"></i></div>`;
+      }
+
+      html += `<h3>${project.title}</h3>`;
+      html += `<div class="modal-description">${project.description}</div>`;
+
+      // Details list
+      html += `<div class="modal-details"><h4><i class="fas fa-list-check"></i> Key Features / Implementations</h4><ul>`;
       project.details.forEach(item => {
         html += `<li>${item}</li>`;
       });
+      html += `</ul></div>`;
 
-      html += `
-          </ul>
-        </div>
-        <div class="modal-tags">
-      `;
+      // Role (if present)
+      if (project.role) {
+        html += `<div style="margin:0.8rem 0;"><strong style="color:#60a5fa;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;">My Role / Contribution</strong><p style="color:#c8d0dc;font-size:0.92rem;">${project.role}</p></div>`;
+      }
 
+      // Status (if present)
+      if (project.status) {
+        html += `<div style="margin:0.8rem 0;"><strong style="color:#60a5fa;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;">Project Status</strong><p style="color:#c8d0dc;font-size:0.92rem;">${project.status}</p></div>`;
+      }
+
+      // Technologies
+      html += `<div class="modal-tags">`;
       project.technologies.forEach(tech => {
         html += `<span>${tech}</span>`;
       });
+      html += `</div>`;
 
-      html += `
-        </div>
-        <div class="modal-outcome">
-          <strong><i class="fas fa-chart-simple"></i> Outcome / Impact:</strong>
-          <p>${project.outcome}</p>
-        </div>
-        <button class="modal-close-btn" onclick="closeProjectModal()">Close</button>
-      `;
+      // Outcome
+      html += `<div class="modal-outcome"><strong><i class="fas fa-chart-simple"></i> Outcome / Impact:</strong><p>${project.outcome}</p></div>`;
+
+      // Action buttons in modal
+      html += `<div style="display:flex;gap:0.6rem;margin-bottom:1rem;flex-wrap:wrap;">`;
+      html += `<a href="#" class="btn-sm" onclick="event.preventDefault();" style="flex:1;justify-content:center;padding:0.6rem 1rem;font-size:0.8rem;"><i class="fab fa-github"></i> View on GitHub</a>`;
+      html += `<a href="#" class="btn-sm" onclick="event.preventDefault();" style="flex:1;justify-content:center;padding:0.6rem 1rem;font-size:0.8rem;"><i class="fas fa-file-pdf"></i> Documentation</a>`;
+      html += `<a href="#" class="btn-sm" onclick="event.preventDefault();" style="flex:1;justify-content:center;padding:0.6rem 1rem;font-size:0.8rem;"><i class="fas fa-external-link-alt"></i> Live Demo</a>`;
+      html += `</div>`;
+
+      html += `<button class="modal-close-btn" onclick="closeProjectModal()">Close</button>`;
 
       container.innerHTML = html;
       modal.style.display = 'flex';
@@ -1722,3 +1836,4 @@
   </script>
 </body>
 </html>
+
